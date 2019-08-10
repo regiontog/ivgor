@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Berlin Sans FB Regular';
+    src: url("/assets/Berlin Sans FB Regular.ttf") format('ttf');
+}
+
+body {
+    background: white;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+
+    margin-right: 10px;
+}
+.song-name {
+    font-size: 2rem;
+}
+
+.album-name {
+    font-size: 1.5rem;
+}
+
+.outer {
+    display: inline-flex;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: row;
+
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 100px, rgba(0, 0, 0, 0.5) 85%, rgba(0, 0, 0, 0));
+
+    border-bottom-right-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-box {
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: row;
+    max-width: 250px;
+    flex-grow: 1;
+    height: 0;
+
+    span {
+        font-family: "Berlin Sans FB Regular";
+        color: white;
+
+        padding-right: 40px;
+        flex-shrink: 0;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &[overflowing] span {
+        animation: scroll linear 0s infinite;
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

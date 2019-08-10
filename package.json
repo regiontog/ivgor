@@ -1,0 +1,40 @@
+{
+    "name": "ivgor",
+    "version": "1.0.0",
+    "description": "Spotify currently playing plugin for OBS",
+    "main": "ivgor.html",
+    "scripts": {
+        "clean": "rimraf dist .cache",
+        "build": "parcel build index.html --experimental-scope-hoisting",
+        "serve": "parcel serve index.html",
+        "prebuild": "npm run clean"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/regiontog/ivgor.git"
+    },
+    "keywords": [
+        "spotify",
+        "obs",
+        "html",
+        "js",
+        "plugin",
+        "playing"
+    ],
+    "author": "Erlend Tobiassen",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/regiontog/ivgor/issues"
+    },
+    "homepage": "https://github.com/regiontog/ivgor#readme",
+    "devDependencies": {
+        "js-base64": "^2.5.1",
+        "parcel": "^1.12.3",
+        "rimraf": "^2.6.3",
+        "sass": "^1.22.9",
+        "tweetnacl": "^1.0.1"
+    },
+    "dependencies": {
+        "quantize": "github:lokesh/quantize"
+    }
+}
