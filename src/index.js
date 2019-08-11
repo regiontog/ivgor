@@ -1,11 +1,16 @@
-import { Base64 } from "js-base64";
 import { rgb2hsl, to_css, linear } from "/src/color";
-import { getSpotifyToken, encode } from "/src/itsec";
+import { getSpotifyToken } from "/src/itsec";
 
 const params = new URLSearchParams(window.location.search);
 
-const apiKey = encode(Base64.decode(params.get("pass")));
-const publicKey = encode(Base64.decode(params.get("publicKey")));
+let [publicKey, signature] = params.get("api").split(".");
+
+const toArray = base64 => {
+    return new Uint8Array(atob(base64.replace(/-/g, "+").replace(/_/g, "/")).split('').map(char => char.charCodeAt(0)));
+};
+
+publicKey = toArray(publicKey);
+signature = toArray(signature);
 
 const canvas = document.createElement("canvas");
 const offscreenImage = document.createElement("img");
@@ -100,7 +105,7 @@ function a200(res) {
 }
 
 function update() {
-    getSpotifyToken("http://localhost:8888/", publicKey, apiKey)
+    getSpotifyToken("http://localhost:8888/", publicKey, signature)
         .then(a200)
         .then(res => res.text())
         .then(token => fetch("https://api.spotify.com/v1/me/player/currently-playing",
