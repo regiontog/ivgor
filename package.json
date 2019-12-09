@@ -1,6 +1,6 @@
 {
     "name": "ivgor",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Spotify currently playing plugin for OBS",
     "main": "ivgor.html",
     "scripts": {
@@ -28,13 +28,12 @@
     },
     "homepage": "https://github.com/regiontog/ivgor#readme",
     "devDependencies": {
-        "js-base64": "^2.5.1",
-        "parcel": "^1.12.3",
-        "rimraf": "^2.6.3",
-        "sass": "^1.22.9",
-        "tweetnacl": "^1.0.1"
+        "parcel": "^1.12.4",
+        "rimraf": "^2.7.1",
+        "sass": "^1.23.7"
     },
     "dependencies": {
-        "quantize": "github:lokesh/quantize"
+        "quantize": "github:lokesh/quantize",
+        "tweetnacl": "^1.0.1"
     }
 }

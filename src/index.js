@@ -6,7 +6,7 @@ const params = new URLSearchParams(window.location.search);
 let [publicKey, signature] = params.get("api").split(".");
 
 const toArray = base64 => {
-    return new Uint8Array(atob(base64.replace(/-/g, "+").replace(/_/g, "/")).split('').map(char => char.charCodeAt(0)));
+    return new Uint8Array(atob(base64.replace(/-/g, "+").replace(/_/g, "/").replace(/~/g, "=")).split('').map(char => char.charCodeAt(0)));
 };
 
 publicKey = toArray(publicKey);
