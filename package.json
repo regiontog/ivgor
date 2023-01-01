@@ -28,7 +28,7 @@
     },
     "homepage": "https://github.com/regiontog/ivgor#readme",
     "devDependencies": {
-        "parcel": "^1.12.4",
+        "parcel": "^2.8.2",
         "rimraf": "^2.7.1",
         "sass": "^1.23.7"
     },
